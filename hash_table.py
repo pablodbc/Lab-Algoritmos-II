@@ -26,14 +26,14 @@ class hashTable:
             self.slot[m].delete(node.key)
     def delete(self,key):
         m = f(key,self)
-        j = self.slot[m].search(node.key)
+        j = self.slot[m].search(key)
         if j != None:
             s = j.data
-            self.slot[m].delete(node.key)
+            self.slot[m].delete(key)
             return s
     def search(self,key):
         m = f(key,self)
-        j = self.slot[m].search(node.key)
+        j = self.slot[m].search(key)
         if j != None:
             return j.data
     def __str__(self):
