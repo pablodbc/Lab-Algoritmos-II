@@ -19,17 +19,17 @@ class hashTable:
     def insert(self,key,data):
         node = hashEntry(key,data)
         self.insertNode(node)
-    def deleteElem(self,node):
+    def deleteNode(self,node):
         m = f(node.key,self)
         j = self.slot[m].search(node.key)
         if j != None:
-            self.slot[m].delete(node.key)
+            self.slot[m].delete(j)
     def delete(self,key):
         m = f(key,self)
         j = self.slot[m].search(key)
         if j != None:
             s = j.data
-            self.slot[m].delete(key)
+            self.slot[m].delete(j)
             return s
     def search(self,key):
         m = f(key,self)
@@ -37,6 +37,7 @@ class hashTable:
         if j != None:
             return j.data
     def __str__(self):
+        print
         for i in range(len(self.slot)):
             print i+1,self.slot[i]
         return ""

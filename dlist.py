@@ -17,13 +17,14 @@ class dlist:
 			node = node.next
 		return node
 
-	def delete(self, key):
-		node = search(self, key)
-		if node != None:
-			if node.prev != None:
-				node.prev.next = node.next
-			if node.next != None:
-				node.next.prev = node.prev
+	def delete(self, node):
+		if node.prev != None:
+			node.prev.next = node.next
+		else:
+			self.head = node.next
+		if node.next != None:
+			node.next.prev = node.prev
+		
 	def __str__(self):
 		i = self.head
 		a = []
