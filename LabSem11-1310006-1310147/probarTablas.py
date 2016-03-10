@@ -16,7 +16,7 @@ def probarTablas(m):
 		c = datos[i]
 		if ct.search(c) == None:
 			r = ct.insert(c,"CI2692")
-			assert(r!=None)
+			assert(r is not None)
 		else:
 			ct.delete(c)
 	t = time() - t

@@ -22,6 +22,9 @@ class cucoTable:
 			if self.slot[pos] == None:
 				self.slot[pos] = node
 				return 1
+			elif self.slot[pos] != None and node.key == self.slot[pos].key:
+				self.slot[pos].data = node.data
+				return 1
 			else:
 				node,self.slot[pos] = self.slot[pos],node
 				if pos == f1(node.key,self):
