@@ -18,7 +18,7 @@ class cucoTable:
 	def insert(self,key,data):
 		pos = f1(key,self)
 		node = cucoEntry(key,data)
-		for i in xrange(self.size):
+		for i in xrange(self.size+1):
 			if self.slot[pos] == None:
 				self.slot[pos] = node
 				return 1
