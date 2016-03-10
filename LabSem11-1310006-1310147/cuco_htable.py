@@ -14,11 +14,11 @@ class cucoEntry:
 class cucoTable:
 	def __init__(self,size):
 		self.size = size
-		self.slot = [None for i in range(size)]
+		self.slot = [None for i in xrange(size)]
 	def insert(self,key,data):
 		pos = f1(key,self)
 		node = cucoEntry(key,data)
-		for i in range(self.size):
+		for i in xrange(self.size):
 			if self.slot[pos] == None:
 				self.slot[pos] = node
 				return 1
@@ -47,7 +47,7 @@ class cucoTable:
 			self.slot[j] = None
 			return a
 	def __str__(self):
-		for i in range(self.size):
+		for i in xrange(self.size):
 			if self.slot[i] != None:
 				print i+1, self.slot[i].key, self.slot[i].data
 			else:
