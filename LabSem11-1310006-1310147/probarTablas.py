@@ -7,10 +7,10 @@ from sys import *
 from string import *
 from time import *
 def probarTablas(m):
-	datos = [randint(0,m)]*2000000
-	ct = cucoTable(131071)
-	ht = hashTable(131071)
-	print "Comenzando prueba de Tabla de Hash Cuco..."
+	datos = [randint(0,m)]*10000
+	ct = cucoTable(32768)
+	ht = hashTable(32768)
+	#print "Comenzando prueba de Tabla de Hash Cuco..."
 	t = time()
 	for i in xrange(len(datos)):
 		c = datos[i]
@@ -21,9 +21,9 @@ def probarTablas(m):
 			ct.delete(c)
 	t = time() - t
 	ctt=t
-	print "Tiempo de ejecucion de Tabla de Hash Cuco", round(t,3)
-	print
-	print "Comenzando prueba de Tabla de Hash con encadenamiento..."
+	#print "Tiempo de ejecucion de Tabla de Hash Cuco", round(t,3)
+	#print
+	#print "Comenzando prueba de Tabla de Hash con encadenamiento..."
 	t = time()
 	for i in xrange(len(datos)):
 		c = datos[i]
@@ -33,7 +33,7 @@ def probarTablas(m):
 			ht.delete(c)
 	t = time() - t
 	htt=t
-	print "Tiempo de ejecucion de Tabla de Hash con encadenamiento", round(t,3)
+	#print "Tiempo de ejecucion de Tabla de Hash con encadenamiento", round(t,3)
 
 	return (ctt,htt)
 
