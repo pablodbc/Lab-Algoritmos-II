@@ -4,14 +4,13 @@ def f1(x,tabla):
 	Ai = A*i - int(A*i)
 	return int(Ai*tabla.size)
 def f2(x,tabla):
-	A = 1 - 0.6180339887498949
-	i = x
-	Ai = A*i - int(A*i)
-	return int(Ai*tabla.size)
+	return x%tabla.size
+#######################################################################################
 class cucoEntry:
 	def __init__(self,key,data):
 		self.key = key
 		self.data = data
+########################################################################################
 class cucoTable:
 	def __init__(self,size):
 		self.size = size
@@ -52,11 +51,8 @@ class cucoTable:
 			if self.slot[i] != None:
 				print i+1, self.slot[i].key, self.slot[i].data
 			else:
-				print None
-		return "\n Tabla de Hash Cuco"
-
-T = cucoTable(5)
-print T
+				print i+1, None
+		return ""
 
 
 
